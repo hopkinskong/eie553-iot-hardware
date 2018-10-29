@@ -1,0 +1,562 @@
+EESchema Schematic File Version 4
+LIBS:IOT-cache
+EELAYER 26 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title "EIE553 IOT Smart Lock Hardware"
+Date "2018-09-23"
+Rev "2"
+Comp "The Hong Kong Polytechnic Univeristy Department of Electronic and Information Engineering"
+Comment1 "chhkong@polyu.edu.hk"
+Comment2 "Created by Hopkins Kong"
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L Device:Buzzer BZ1
+U 1 1 5B75529B
+P 2050 1150
+F 0 "BZ1" H 2150 1000 50  0000 L CNN
+F 1 "3V3 Active Buzzer" H 2050 900 50  0000 L CNN
+F 2 "Buzzer_Beeper:Buzzer_12x9.5RM7.6" V 2025 1250 50  0001 C CNN
+F 3 "~" V 2025 1250 50  0001 C CNN
+	1    2050 1150
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R1
+U 1 1 5B7553D3
+P 1550 1700
+F 0 "R1" V 1343 1700 50  0000 C CNN
+F 1 "1K/0.25W" V 1434 1700 50  0000 C CNN
+F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 1480 1700 50  0001 C CNN
+F 3 "~" H 1550 1700 50  0001 C CNN
+	1    1550 1700
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:Q_NPN_EBC Q1
+U 1 1 5B75546C
+P 2000 1700
+F 0 "Q1" H 2191 1746 50  0000 L CNN
+F 1 "S8050" H 2191 1655 50  0000 L CNN
+F 2 "Package_TO_SOT_THT:TO-92" H 2200 1800 50  0001 C CNN
+F 3 "~" H 2000 1700 50  0001 C CNN
+	1    2000 1700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1700 1700 1800 1700
+$Comp
+L power:GND #PWR01
+U 1 1 5B75561A
+P 2100 2050
+F 0 "#PWR01" H 2100 1800 50  0001 C CNN
+F 1 "GND" H 2105 1877 50  0000 C CNN
+F 2 "" H 2100 2050 50  0001 C CNN
+F 3 "" H 2100 2050 50  0001 C CNN
+	1    2100 2050
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+3.3V #PWR02
+U 1 1 5B7556BE
+P 1900 850
+F 0 "#PWR02" H 1900 700 50  0001 C CNN
+F 1 "+3.3V" H 1915 1023 50  0000 C CNN
+F 2 "" H 1900 850 50  0001 C CNN
+F 3 "" H 1900 850 50  0001 C CNN
+	1    1900 850 
+	1    0    0    -1  
+$EndComp
+Text Label 1300 1700 2    50   ~ 0
+BUZZER_CONTROL
+Wire Wire Line
+	1400 1700 1300 1700
+Wire Notes Line
+	600  600  2750 600 
+Wire Notes Line
+	2750 600  2750 2300
+Wire Notes Line
+	2750 2300 600  2300
+Wire Notes Line
+	600  2300 600  600 
+Text Notes 650  2250 0    50   ~ 0
+Buzzer Control Circuit
+$Comp
+L Device:LED D2
+U 1 1 5B755C53
+P 3800 1100
+F 0 "D2" H 3792 845 50  0000 C CNN
+F 1 "5MM_GREEN_LED" H 3792 936 50  0000 C CNN
+F 2 "LED_THT:LED_D5.0mm" H 3800 1100 50  0001 C CNN
+F 3 "~" H 3800 1100 50  0001 C CNN
+	1    3800 1100
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:LED D3
+U 1 1 5B755D05
+P 3800 1550
+F 0 "D3" H 3792 1295 50  0000 C CNN
+F 1 "5MM_RED_LED" H 3792 1386 50  0000 C CNN
+F 2 "LED_THT:LED_D5.0mm" H 3800 1550 50  0001 C CNN
+F 3 "~" H 3800 1550 50  0001 C CNN
+	1    3800 1550
+	-1   0    0    1   
+$EndComp
+Text Label 3550 1100 2    50   ~ 0
+GREEN_LED
+Wire Wire Line
+	3550 1100 3650 1100
+Text Label 3550 1550 2    50   ~ 0
+RED_LED
+Wire Wire Line
+	3550 1550 3650 1550
+$Comp
+L Device:R R3
+U 1 1 5B755F3C
+P 4350 1100
+F 0 "R3" V 4143 1100 50  0000 C CNN
+F 1 "330R/0.25W" V 4234 1100 50  0000 C CNN
+F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 4280 1100 50  0001 C CNN
+F 3 "~" H 4350 1100 50  0001 C CNN
+	1    4350 1100
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R R4
+U 1 1 5B755FA3
+P 4350 1550
+F 0 "R4" V 4143 1550 50  0000 C CNN
+F 1 "330R/0.25W" V 4234 1550 50  0000 C CNN
+F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 4280 1550 50  0001 C CNN
+F 3 "~" H 4350 1550 50  0001 C CNN
+	1    4350 1550
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	3950 1100 4200 1100
+Wire Wire Line
+	3950 1550 4200 1550
+$Comp
+L power:GND #PWR03
+U 1 1 5B7561F2
+P 4550 1600
+F 0 "#PWR03" H 4550 1350 50  0001 C CNN
+F 1 "GND" H 4555 1427 50  0000 C CNN
+F 2 "" H 4550 1600 50  0001 C CNN
+F 3 "" H 4550 1600 50  0001 C CNN
+	1    4550 1600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4500 1550 4550 1550
+Wire Wire Line
+	4550 1550 4550 1600
+$Comp
+L power:GND #PWR04
+U 1 1 5B7562B6
+P 4550 1150
+F 0 "#PWR04" H 4550 900 50  0001 C CNN
+F 1 "GND" H 4555 977 50  0000 C CNN
+F 2 "" H 4550 1150 50  0001 C CNN
+F 3 "" H 4550 1150 50  0001 C CNN
+	1    4550 1150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4500 1100 4550 1100
+Wire Wire Line
+	4550 1100 4550 1150
+Text Notes 2950 2250 0    50   ~ 0
+LED Controls\n
+Wire Notes Line
+	2900 600  4800 600 
+Wire Notes Line
+	4800 600  4800 2300
+Wire Notes Line
+	4800 2300 2900 2300
+Wire Notes Line
+	2900 2300 2900 600 
+$Comp
+L Sensor_Optical:LDR03 R5
+U 1 1 5B756C59
+P 6100 1200
+F 0 "R5" V 5775 1200 50  0000 C CNN
+F 1 "GL5506" V 5866 1200 50  0000 C CNN
+F 2 "OptoDevice:R_LDR_5.1x4.3mm_P3.4mm_Vertical" V 6275 1200 50  0001 C CNN
+F 3 "http://www.elektronica-componenten.nl/WebRoot/StoreNL/Shops/61422969/54F1/BA0C/C664/31B9/2173/C0A8/2AB9/2AEF/LDR03IMP.pdf" H 6100 1150 50  0001 C CNN
+	1    6100 1200
+	0    1    1    0   
+$EndComp
+Text Notes 5000 900  0    50   ~ 0
+GL5506 Light-Dependent Resistor (LDR)\n(Bright) 10Lux = 4KOhm - 7KOhm\n(Dark) 0Lux = 500KOhm
+$Comp
+L Device:R R6
+U 1 1 5B756EE5
+P 6100 1550
+F 0 "R6" V 5893 1550 50  0000 C CNN
+F 1 "10K/0.25W" V 5984 1550 50  0000 C CNN
+F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 6030 1550 50  0001 C CNN
+F 3 "~" H 6100 1550 50  0001 C CNN
+	1    6100 1550
+	0    1    1    0   
+$EndComp
+$Comp
+L power:+3.3V #PWR05
+U 1 1 5B756FD2
+P 6500 1100
+F 0 "#PWR05" H 6500 950 50  0001 C CNN
+F 1 "+3.3V" H 6515 1273 50  0000 C CNN
+F 2 "" H 6500 1100 50  0001 C CNN
+F 3 "" H 6500 1100 50  0001 C CNN
+	1    6500 1100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6500 1100 6500 1200
+Wire Wire Line
+	6500 1200 6250 1200
+Wire Wire Line
+	5950 1200 5800 1200
+Wire Wire Line
+	5800 1200 5800 1400
+Wire Wire Line
+	5800 1550 5950 1550
+$Comp
+L power:GND #PWR06
+U 1 1 5B75735F
+P 6500 1600
+F 0 "#PWR06" H 6500 1350 50  0001 C CNN
+F 1 "GND" H 6505 1427 50  0000 C CNN
+F 2 "" H 6500 1600 50  0001 C CNN
+F 3 "" H 6500 1600 50  0001 C CNN
+	1    6500 1600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6250 1550 6500 1550
+Wire Wire Line
+	6500 1550 6500 1600
+Text Label 5450 1400 2    50   ~ 0
+LDR_ADC
+Wire Wire Line
+	5450 1400 5550 1400
+Connection ~ 5800 1400
+$Comp
+L Device:C C1
+U 1 1 5B757D7C
+P 5550 1750
+F 0 "C1" H 5665 1796 50  0000 L CNN
+F 1 "100n/50V" H 5665 1705 50  0000 L CNN
+F 2 "Capacitor_THT:C_Disc_D5.1mm_W3.2mm_P5.00mm" H 5588 1600 50  0001 C CNN
+F 3 "~" H 5550 1750 50  0001 C CNN
+	1    5550 1750
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5550 1400 5550 1600
+Connection ~ 5550 1400
+$Comp
+L power:GND #PWR07
+U 1 1 5B758059
+P 5550 2000
+F 0 "#PWR07" H 5550 1750 50  0001 C CNN
+F 1 "GND" H 5555 1827 50  0000 C CNN
+F 2 "" H 5550 2000 50  0001 C CNN
+F 3 "" H 5550 2000 50  0001 C CNN
+	1    5550 2000
+	1    0    0    -1  
+$EndComp
+Wire Notes Line
+	4950 600  6750 600 
+Wire Notes Line
+	6750 600  6750 2300
+Wire Notes Line
+	6750 2300 4950 2300
+Wire Notes Line
+	4950 2300 4950 600 
+Text Notes 5000 2250 0    50   ~ 0
+LDR Circuit
+$Comp
+L power:+3.3V #PWR08
+U 1 1 5B75C2A1
+P 1850 3550
+F 0 "#PWR08" H 1850 3400 50  0001 C CNN
+F 1 "+3.3V" H 1865 3723 50  0000 C CNN
+F 2 "" H 1850 3550 50  0001 C CNN
+F 3 "" H 1850 3550 50  0001 C CNN
+	1    1850 3550
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR09
+U 1 1 5B75C734
+P 1850 5600
+F 0 "#PWR09" H 1850 5350 50  0001 C CNN
+F 1 "GND" H 1855 5427 50  0000 C CNN
+F 2 "" H 1850 5600 50  0001 C CNN
+F 3 "" H 1850 5600 50  0001 C CNN
+	1    1850 5600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1850 5600 1850 5550
+Wire Wire Line
+	1850 5550 2400 5550
+$Comp
+L power:GND #PWR010
+U 1 1 5B75CC10
+P 5500 3650
+F 0 "#PWR010" H 5500 3400 50  0001 C CNN
+F 1 "GND" H 5505 3477 50  0000 C CNN
+F 2 "" H 5500 3650 50  0001 C CNN
+F 3 "" H 5500 3650 50  0001 C CNN
+	1    5500 3650
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4950 3600 5500 3600
+Wire Wire Line
+	5500 3600 5500 3650
+$Comp
+L power:GND #PWR011
+U 1 1 5B75D141
+P 5500 4550
+F 0 "#PWR011" H 5500 4300 50  0001 C CNN
+F 1 "GND" H 5505 4377 50  0000 C CNN
+F 2 "" H 5500 4550 50  0001 C CNN
+F 3 "" H 5500 4550 50  0001 C CNN
+	1    5500 4550
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5500 4500 5500 4550
+Wire Wire Line
+	4950 4500 5500 4500
+Wire Wire Line
+	1850 3600 1850 3550
+Wire Wire Line
+	1850 3600 2150 3600
+Text Label 2050 4500 2    50   ~ 0
+LDR_ADC
+Wire Wire Line
+	2050 4500 2400 4500
+Text Label 5250 5100 0    50   ~ 0
+GREEN_LED
+Text Label 5250 5250 0    50   ~ 0
+RED_LED
+Text Label 5450 5400 0    50   ~ 0
+BUZZER_CONTROL
+Wire Wire Line
+	5450 5400 4950 5400
+$Comp
+L Device:LED D1
+U 1 1 5B7602AB
+P 2500 3050
+F 0 "D1" H 2492 2795 50  0000 C CNN
+F 1 "5MM_YELLOW_LED" H 2492 2886 50  0000 C CNN
+F 2 "LED_THT:LED_D5.0mm" H 2500 3050 50  0001 C CNN
+F 3 "~" H 2500 3050 50  0001 C CNN
+	1    2500 3050
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	2350 3050 2150 3050
+Wire Wire Line
+	2150 3050 2150 3600
+Connection ~ 2150 3600
+$Comp
+L Device:R R2
+U 1 1 5B760B67
+P 3000 3050
+F 0 "R2" V 2793 3050 50  0000 C CNN
+F 1 "330R/0.25W" V 2884 3050 50  0000 C CNN
+F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 2930 3050 50  0001 C CNN
+F 3 "~" H 3000 3050 50  0001 C CNN
+	1    3000 3050
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	2650 3050 2850 3050
+$Comp
+L power:GND #PWR012
+U 1 1 5B7614CA
+P 3300 3100
+F 0 "#PWR012" H 3300 2850 50  0001 C CNN
+F 1 "GND" H 3305 2927 50  0000 C CNN
+F 2 "" H 3300 3100 50  0001 C CNN
+F 3 "" H 3300 3100 50  0001 C CNN
+	1    3300 3100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3150 3050 3300 3050
+Wire Wire Line
+	3300 3050 3300 3100
+$Comp
+L power:+3.3V #PWR013
+U 1 1 5B76C211
+P 7500 1100
+F 0 "#PWR013" H 7500 950 50  0001 C CNN
+F 1 "+3.3V" H 7515 1273 50  0000 C CNN
+F 2 "" H 7500 1100 50  0001 C CNN
+F 3 "" H 7500 1100 50  0001 C CNN
+	1    7500 1100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5550 1900 5550 2000
+$Comp
+L power:GND #PWR014
+U 1 1 5B76D5A2
+P 7250 1050
+F 0 "#PWR014" H 7250 800 50  0001 C CNN
+F 1 "GND" H 7255 877 50  0000 C CNN
+F 2 "" H 7250 1050 50  0001 C CNN
+F 3 "" H 7250 1050 50  0001 C CNN
+	1    7250 1050
+	0    1    1    0   
+$EndComp
+Text Label 5250 4150 0    50   ~ 0
+OLED_SDA
+Text Label 5250 4000 0    50   ~ 0
+OLED_SCL
+Text Label 8050 1150 0    50   ~ 0
+OLED_SCL
+Text Label 8050 1250 0    50   ~ 0
+OLED_SDA
+Wire Wire Line
+	7800 1250 8050 1250
+Wire Wire Line
+	7650 1150 7650 1250
+Wire Wire Line
+	7650 1150 8050 1150
+Text Notes 650  950  0    50   ~ 0
+Buzzer must be Active type\nOperates with 3.3V\n12mm Diameter*9.5mm High\nPin Pitch 7.6mm
+Text Notes 2900 700  0    50   ~ 0
+5mm LEDs, Transparent, Domed/Round-Top Type
+Wire Notes Line
+	6900 600  8850 600 
+Wire Notes Line
+	8850 600  8850 2300
+Wire Notes Line
+	8850 2300 6900 2300
+Wire Notes Line
+	6900 2300 6900 600 
+Text Notes 6950 2250 0    50   ~ 0
+0.96inch OLED Display Circuit
+Wire Wire Line
+	2100 1900 2100 2050
+Wire Wire Line
+	1900 850  1900 1050
+Wire Wire Line
+	1900 1050 1950 1050
+Wire Wire Line
+	1950 1250 1900 1250
+Wire Wire Line
+	1900 1250 1900 1500
+Wire Wire Line
+	1900 1500 2100 1500
+NoConn ~ 2400 3750
+NoConn ~ 2400 3900
+NoConn ~ 2400 4050
+NoConn ~ 2400 4200
+NoConn ~ 2400 4350
+NoConn ~ 2400 4650
+NoConn ~ 2400 4800
+NoConn ~ 2400 4950
+NoConn ~ 2400 5100
+NoConn ~ 2400 5700
+NoConn ~ 2400 5850
+NoConn ~ 2400 6000
+NoConn ~ 2400 6150
+NoConn ~ 2400 6300
+NoConn ~ 4950 6300
+NoConn ~ 4950 6150
+NoConn ~ 4950 6000
+NoConn ~ 4950 5850
+NoConn ~ 4950 5700
+NoConn ~ 4950 5550
+NoConn ~ 4950 4950
+NoConn ~ 4950 4800
+NoConn ~ 4950 4650
+NoConn ~ 4950 4200
+NoConn ~ 4950 4050
+NoConn ~ 4950 3750
+Wire Notes Line
+	6600 2500 6600 6850
+Wire Notes Line
+	6600 6850 1050 6850
+Wire Notes Line
+	1050 6850 1050 2500
+Wire Notes Line
+	1050 2500 6600 2500
+Text Notes 1100 6800 0    50   ~ 0
+Main MCU
+Text Notes 4450 2650 0    50   ~ 0
+2 * Single Row 19 Pins Female Header, 2.54mm Pitch
+Text Notes 7000 800  0    50   ~ 0
+1 * Single Row 4 Pins Female Header\n2.54mm Pitch
+Text Notes 1650 2750 0    50   ~ 0
+5mm LED, Transparent, Domed/Round-Top Type
+Text Notes 5600 1950 0    50   ~ 0
+MLCC 5.08mm Pitch
+Wire Wire Line
+	5800 1400 5800 1550
+Wire Wire Line
+	5550 1400 5800 1400
+Wire Wire Line
+	2150 3600 2400 3600
+$Comp
+L OLED_Display:0.96Inch_OLED_4Pin U2
+U 1 1 5B7ACE68
+P 7550 1650
+F 0 "U2" H 7978 1778 50  0000 L CNN
+F 1 "0.96Inch_OLED_4Pin" H 7978 1687 50  0000 L CNN
+F 2 "IOT:oled_4pin" H 7500 2050 50  0001 C CNN
+F 3 "" H 7500 2050 50  0001 C CNN
+	1    7550 1650
+	1    0    0    -1  
+$EndComp
+$Comp
+L ESP32_Dev_Board:NodeMCU-32S U1
+U 1 1 5B7B0E45
+P 3650 4950
+F 0 "U1" H 3675 6565 50  0000 C CNN
+F 1 "NodeMCU-32S" H 3675 6474 50  0000 C CNN
+F 2 "IOT:nodemcu_esp32s" H 2800 6650 50  0001 C CNN
+F 3 "" H 2800 6650 50  0001 C CNN
+	1    3650 4950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4950 3900 5150 3900
+Wire Wire Line
+	5150 3900 5150 4000
+Wire Wire Line
+	5150 4000 5250 4000
+Wire Wire Line
+	4950 4350 5150 4350
+Wire Wire Line
+	5150 4350 5150 4150
+Wire Wire Line
+	5150 4150 5250 4150
+Wire Wire Line
+	5250 5100 4950 5100
+Wire Wire Line
+	4950 5250 5250 5250
+NoConn ~ 2400 5250
+NoConn ~ 2400 5400
+Wire Wire Line
+	7500 1100 7500 1250
+Wire Wire Line
+	7250 1050 7350 1050
+Wire Wire Line
+	7350 1050 7350 1250
+Text Notes 6950 2000 0    50   ~ 0
+Mounting Holes: 4Pcs M2*11+3 Brass Post
+$EndSCHEMATC
